@@ -1,36 +1,47 @@
 <template>
-    <form @submit.prevent="submit">
-        <input type="text" placeholder="Add todo" v-model="todo">
-        <button type="submit">Submit</button>
-    </form>
+    <div class="sub-from">
+        <form @submit.prevent="submit(todo)">
+            <input type="text" placeholder="Add subtask" v-model="subtask">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </template>
 
 <script>
-    import {mapActions, mapGetters} from 'vuex';
+    import {mapActions} from 'vuex';
 
     export default {
-        name: "TodoForm",
+        name: "SubtaskForm",
+        props: ['todo'],
         data() {
             return {
-                todo: ''
+                subtask: ''
             }
         },
         methods: {
-            ...mapActions(["addTodo"]),
-            submit() {
-                if (this.todo !== '') {
-                    const todo = {
-                        task: this.todo
-                    };
-                    this.addTodo(todo);
-                    this.todo = '';
+            ...mapActions(['addSubtask']),
+            submit(item) {
+                console.log(this.subtask)
+                const payload = {
+                    id: item._id,
+                    res: {
+                        subTask: this.subtask
+                    }
                 }
+                this.addSubtask(payload);
+                this.subtask = '';
             }
         }
     }
 </script>
 
 <style scoped>
+    .sub-from{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
     form {
         display: flex;
         justify-content: space-between;

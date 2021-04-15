@@ -7,8 +7,13 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-material": "^1.0.0-beta-15",
+    "vue-material-design-icons": "^4.11.0",
+    "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
