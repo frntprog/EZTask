@@ -12,7 +12,13 @@ const TodoSchema = mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    edit: {
+        type: Boolean,
+        default: false
+    },
+    detailedInfo: {
+        type: []
     }
 })
-
 module.exports = mongoose.model('Todos', TodoSchema)
