@@ -55,14 +55,24 @@ export default {
         },
 
         async editTodo(ctx, payload) {
-            await fetch(`http://localhost:3000/todo/edit/${payload.id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload.item)
-            });
-            ctx.commit("editSelectedItem", payload.item)
+            try {
+                const res = await fetch(`http://localhost:3000/todo/edit/${payload.id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload.item)
+                });
+                const result = await res.json();
+                if(result.message){
+                    throw `${result.message}`;
+                }
+                console.log(result)
+                ctx.commit("editSelectedItem", payload.item)
+            } catch (e) {
+                console.log("CATCH: ", e)
+            }
+
         },
 
         async addSubtask(ctx, payload) {
@@ -92,10 +102,10 @@ export default {
         }
     },
     mutations: {
-        setDeleteSubTask(state, payload){
+        setDeleteSubTask(state, payload) {
             console.log("GO")
             state.todos = state.todos.map(item => {
-                if(item._id === payload.id){
+                if (item._id === payload.id) {
                     console.log("SUB")
                     item.detailedInfo = item.detailedInfo.filter(sub => {
                         return sub !== payload.subTask;

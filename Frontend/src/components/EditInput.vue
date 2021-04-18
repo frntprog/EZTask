@@ -47,6 +47,7 @@
             },
             defaultData(){
                 this.edited = this.todo.task;
+                console.log(this.edited)
             }
         }
     }
