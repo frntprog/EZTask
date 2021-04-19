@@ -11,8 +11,8 @@
             </div>
         </li>
         <div class="item-btns">
-            <button @click="completeTask(todo)" class="don">{{todo.completed ? 'undone' : 'done'}}</button>
-            <button @click="remove(todo._id)" :class="{hide: $route.path !== '/'}">delete</button>
+            <button @click="completeTask(todo)">{{todo.completed ? $t("buttons.undone") : $t("buttons.done")}}</button>
+            <button @click="remove(todo._id)" :class="{hide: $route.path !== '/'}">{{$t("buttons.delete")}}</button>
         </div>
     </div>
 </template>
@@ -26,9 +26,6 @@
         props: ['todo'],
         components: {
             EditInput
-        },
-        mounted() {
-            console.log(this.$route)
         },
         methods: {
             ...mapActions(['deleteTodo', 'doneTodo']),
@@ -50,31 +47,27 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .item-link {
         text-decoration: none;
-        color: #2C3E50;
+        color: $primary-text-color;
     }
 
     .li-wrapper {
         user-select: none;
         border-radius: 5px;
-        border: 1px solid #cccccc;
+        border: 1px solid $grey;
         padding: 10px 10px;
         display: flex;
         margin: 20px 0;
         justify-content: space-between;
     }
 
-    .todo-item span {
-        /*display: none;*/
-    }
-
     button {
         border: none;
         border-radius: 5px;
-        background-color: lightpink;
-        color: #ffffff;
+        background-color: $todo-btn;
+        color: $white;
         padding: 5px 10px;
         cursor: pointer;
         outline: none;
@@ -82,14 +75,14 @@
     }
 
     button:hover {
-        background-color: palevioletred;
+        background-color: $todo-btn-hover;
     }
 
     .item-btns button:not(:last-child) {
         margin-right: 30px;
     }
 
-    .hide{
+    .hide {
         display: none;
     }
 
@@ -106,5 +99,4 @@
     .done {
         text-decoration: line-through;
     }
-
 </style>

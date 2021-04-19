@@ -18,10 +18,7 @@
             TodoForm,
             TodoItem
         },
-        props: ['todos'],
-        mounted() {
-            console.log(this.todos)
-        }
+        props: ['todos']
     }
 </script>
 

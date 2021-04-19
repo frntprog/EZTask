@@ -1,8 +1,10 @@
 <template>
     <div class="sub-from">
         <form @submit.prevent="submit(todo)">
-            <input type="text" placeholder="Add subtask" v-model="subtask">
-            <button type="submit">Submit</button>
+            <input type="text" :placeholder='$t("input.addSubTask")' v-model="subtask">
+            <div class="button-wrapper">
+                <button type="submit">{{$t("buttons.submit")}}</button>
+            </div>
         </form>
     </div>
 </template>
@@ -21,7 +23,6 @@
         methods: {
             ...mapActions(['addSubtask']),
             submit(item) {
-                console.log(this.subtask)
                 const payload = {
                     id: item._id,
                     res: {
@@ -35,7 +36,7 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .sub-from{
         display: flex;
         align-items: center;
@@ -51,27 +52,27 @@
     input {
         width: 300px;
         border: none;
-        border-bottom: 1px solid #cccccc;
+        border-bottom: 1px solid $white;
         outline: none;
         font-size: 16px;
         transition: all 0.3s;
     }
 
     input:focus {
-        border-bottom: 1px solid cornflowerblue;
+        border-bottom: 1px solid $input-focus;
     }
 
     button {
         border: none;
-        background-color: lightblue;
+        background-color: $submit-btn;
         cursor: pointer;
         padding: 10px 15px;
-        color: #ffffff;
+        color: $white;
         border-radius: 5px;
         transition: all 0.3s ease-out;
     }
 
     button:hover {
-        background-color: cadetblue;
+        background-color: $submit-btn-hover;
     }
 </style>

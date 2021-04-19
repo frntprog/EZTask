@@ -1,29 +1,35 @@
 <template>
     <div id="app">
-        <h1>Todo App</h1>
         <router-view></router-view>
+        <Switcher/>
     </div>
 </template>
 
 <script>
     import Todos from "./components/Todos";
+    import Switcher from "./components/Switcher";
 
     export default {
         name: 'App',
         components: {
+            Switcher,
             Todos
         }
     }
 </script>
 
-<style>
+<style lang="scss">
     #app {
         font-family: Avenir, Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        color: #2c3e50;
+        color: $primary-text-color;
         margin: 60px;
         list-style: none;
+    }
+
+    h1, h2 {
+        font-size: 20px;
     }
 </style>

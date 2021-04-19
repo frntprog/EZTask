@@ -1,0 +1,20 @@
+{
+  "headers":{
+    "todo": "Todo",
+    "detailPage": "Detail page",
+    "subTasks": "Subtasks"
+  },
+  "input": {
+    "addTodo": "Add todo",
+    "addSubTask": "Add subtask"
+  },
+  "message": "hello i18n !!",
+  "buttons": {
+    "done": "done",
+    "undone": "undone",
+    "delete": "delete",
+    "submit": "Submit"
+  },
+  "goBack": "Back"
+}
+

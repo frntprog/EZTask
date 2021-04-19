@@ -1,11 +1,13 @@
 <template>
     <div class="details">
-        <h2>Detail Page</h2>
+        <h2>{{$t("headers.detailPage")}}</h2>
         <TodoItem
                 :todo="currTodo"
         />
         <TodoDetails :todo="currTodo"/>
-        <router-link class="back" to="/">Go Back</router-link>
+<!--        <router-link class="back" to="/">-->
+<!--            <p class="back">{{$t("goBack")}}</p>-->
+<!--        </router-link>-->
     </div>
 </template>
 
@@ -31,7 +33,6 @@
             if (todo) {
                 this.todo = todo;
             }
-            console.log(todo)
         },
         computed: {
             currTodo() {
@@ -45,7 +46,6 @@
 <style scoped>
     .back{
       text-decoration: none;
-        color: #2c3e50;
     }
 
     .details {
@@ -55,5 +55,9 @@
 
     .done {
         text-decoration: line-through;
+    }
+
+    .back{
+        font-size: 20px;
     }
 </style>

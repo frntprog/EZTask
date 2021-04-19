@@ -34,7 +34,7 @@
 
 
 
-<style scoped>
+<style lang="scss" scoped>
     .todo-list{
         list-style: none;
         width: 400px;
@@ -45,7 +45,7 @@
         border: none;
         border-radius: 5px;
         background-color: palevioletred;
-        color: #ffffff;
+        color: $white;
         padding: 5px 10px;
         cursor: pointer;
         outline: none;

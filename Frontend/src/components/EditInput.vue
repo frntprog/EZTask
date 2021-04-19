@@ -24,7 +24,6 @@
         },
         mounted() {
           this.edited = this.todo.task;
-            console.log(this.todo)
         },
         methods:{
             ...mapActions(["changeEditStatus", "editTodo"]),
@@ -47,13 +46,12 @@
             },
             defaultData(){
                 this.edited = this.todo.task;
-                console.log(this.edited)
             }
         }
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .editInput{
         display: none;
     }
@@ -71,7 +69,7 @@
     .edit-wrapper input{
         max-width: 150px;
         border: none;
-        border-bottom: 1px solid #cccccc;
+        border-bottom: 1px solid $white;
         outline: none;
         font-size: 16px;
         transition: all 0.3s;

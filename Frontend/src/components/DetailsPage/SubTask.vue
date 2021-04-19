@@ -15,9 +15,6 @@
                 completed: false
             }
         },
-        mounted() {
-            console.log(this.subTask)
-        },
         methods: {
             ...mapActions(['deleteSubTask']),
             deleteSTask(){
@@ -31,12 +28,12 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     p{
         cursor: pointer;
         text-align: left;
         border-radius: 5px;
-        border: 1px solid #cccccc;
+        border: 1px solid $grey;
         padding: 10px 10px;
         word-wrap: normal;
         user-select: none;

@@ -64,26 +64,33 @@ export default {
                     body: JSON.stringify(payload.item)
                 });
                 const result = await res.json();
-                if(result.message){
+                if (result.message) {
                     throw `${result.message}`;
                 }
-                console.log(result)
                 ctx.commit("editSelectedItem", payload.item)
             } catch (e) {
-                console.log("CATCH: ", e)
+                // console.log("CATCH: ", e)
             }
 
         },
 
         async addSubtask(ctx, payload) {
-            await fetch(`http://localhost:3000/todo/detailedInfo/${payload.id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload.res)
-            });
-            ctx.commit("addSubTask", payload)
+            try {
+                const res = await fetch(`http://localhost:3000/todo/detailedInfo/${payload.id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload.res)
+                });
+                const result = await res.json();
+                if (result.message) {
+                    throw `${result.message}`;
+                }
+                ctx.commit("addSubTask", payload)
+            } catch (e) {
+                // console.log(e);
+            }
         },
 
         async deleteSubTask(ctx, payload) {
@@ -103,10 +110,8 @@ export default {
     },
     mutations: {
         setDeleteSubTask(state, payload) {
-            console.log("GO")
             state.todos = state.todos.map(item => {
                 if (item._id === payload.id) {
-                    console.log("SUB")
                     item.detailedInfo = item.detailedInfo.filter(sub => {
                         return sub !== payload.subTask;
                     })
@@ -116,18 +121,15 @@ export default {
         },
 
         addSubTask(state, payload) {
-            console.log("GO")
             state.todos = state.todos.map(todo => {
                 if (todo._id === payload.id) {
                     todo.detailedInfo.unshift(payload.res)
                 }
                 return todo;
             })
-            console.log(state.todos)
         },
 
         editSelectedItem(state, item) {
-            console.log("GO")
             state.todos = state.todos.map(todo => {
                 if (todo._id === item._id) {
                     return item;
@@ -137,7 +139,6 @@ export default {
         },
 
         toggleEdit(state, payload) {
-            console.log("GO")
             state.todos = state.todos.map(i => {
                 if (i._id === payload.id) {
                     return {
@@ -156,12 +157,10 @@ export default {
         },
 
         deleteCompleted(state) {
-            console.log("GO")
             state.todos = state.todos.filter(todo => todo.completed === false)
         },
 
         triggerCompleted(state, todo) {
-            console.log("GO")
             state.todos = state.todos.map((i) => {
                 if (i === todo) {
                     return {
@@ -174,19 +173,14 @@ export default {
         },
 
         setDeleteTodo(state, deletedTodo) {
-            console.log("GO")
-            console.log(deletedTodo)
             state.todos = state.todos.filter(todo => todo._id !== deletedTodo);
-            console.log(state.todos)
         },
 
         updateTodos(state, todos) {
-            console.log("GO")
             state.todos = todos;
         },
 
         addNewTodo(state, todo) {
-            console.log("GO")
             state.todos.unshift(todo);
         }
     },

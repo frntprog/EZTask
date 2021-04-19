@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Subtasks</h2>
+        <h4 class="subTitle">{{$t("headers.subTasks")}}</h4>
         <SubtaskForm :todo="todo"/>
         <SubTask v-for="item in todo.detailedInfo" :subTask="{item: item, todo: todo}"/>
     </div>
@@ -18,4 +18,7 @@
 </script>
 
 <style scoped>
+    .subTitle{
+        margin-top: 40px;
+    }
 </style>
