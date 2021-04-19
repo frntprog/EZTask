@@ -66,7 +66,7 @@
     button {
         border: none;
         border-radius: 5px;
-        background-color: $todo-btn;
+        background-color: $todo-btn !important;
         color: $white;
         padding: 5px 10px;
         cursor: pointer;
@@ -75,7 +75,7 @@
     }
 
     button:hover {
-        background-color: $todo-btn-hover;
+        background-color: $todo-btn-hover !important;
     }
 
     .item-btns button:not(:last-child) {

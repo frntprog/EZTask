@@ -18,7 +18,7 @@
 </script>
 
 <style scoped>
-    .subTitle{
+    .subTitle {
         margin-top: 40px;
     }
 </style>

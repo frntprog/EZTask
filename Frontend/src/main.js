@@ -6,7 +6,6 @@ import i18n from './i18n'
 import 'materialize-css/dist/css/materialize.min.css';
 import 'material-design-icons/iconfont/material-icons.css';
 
-
 Vue.config.productionTip = false;
 
 new Vue({

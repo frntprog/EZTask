@@ -17,8 +17,6 @@ const TodoSchema = mongoose.Schema({
         type: Boolean,
         default: false
     },
-    detailedInfo: {
-        type: []
-    }
+    detailedInfo: []
 })
 module.exports = mongoose.model('Todos', TodoSchema)

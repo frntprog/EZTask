@@ -5,12 +5,8 @@ const Joi = require('@hapi/joi');
 const to = require('await-to-js').default;
 
 router.get("/", async (req, res) => {
-    try {
-        const [err, todos] = await to(Todo.find().sort({date: -1}));
-        res.json(todos);
-    } catch (e) {
-        res.json({message: e});
-    }
+    const [err, todos] = await to(Todo.find().sort({date: -1}));
+    err ? res.json(err) : res.json(todos);
 });
 
 router.post("/", async (req, res) => {
@@ -121,7 +117,6 @@ router.patch("/detailedInfo/:todoID", async (req, res) => {
             res.json({message: e});
         }
     }
-
 });
 
 module.exports = router;

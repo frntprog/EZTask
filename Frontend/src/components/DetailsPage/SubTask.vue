@@ -10,14 +10,14 @@
     export default {
         name: "SubTask",
         props: ['subTask'],
-        data(){
-            return{
+        data() {
+            return {
                 completed: false
             }
         },
         methods: {
             ...mapActions(['deleteSubTask']),
-            deleteSTask(){
+            deleteSTask() {
                 const payload = {
                     id: this.subTask.todo._id,
                     subTask: this.subTask.item
@@ -29,7 +29,7 @@
 </script>
 
 <style lang="scss" scoped>
-    p{
+    p {
         cursor: pointer;
         text-align: left;
         border-radius: 5px;

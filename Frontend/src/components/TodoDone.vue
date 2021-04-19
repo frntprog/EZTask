@@ -13,6 +13,7 @@
     import {mapActions, mapGetters} from 'vuex';
     import TodoItem from "./TodoItem";
     import TodoForm from "./TodoForm";
+
     export default {
         name: "TodoList",
         components: {
@@ -25,7 +26,7 @@
         },
         methods: {
             ...mapActions(['clearDone']),
-            deleteDone(){
+            deleteDone() {
                 this.clearDone();
             }
         }
@@ -33,15 +34,14 @@
 </script>
 
 
-
 <style lang="scss" scoped>
-    .todo-list{
+    .todo-list {
         list-style: none;
         width: 400px;
         margin: 0 auto;
     }
 
-    .clear{
+    .clear {
         border: none;
         border-radius: 5px;
         background-color: palevioletred;
@@ -52,7 +52,7 @@
         transition: all 0.3s ease-out;
     }
 
-    .clear:hover{
+    .clear:hover {
         background-color: lightcoral;
     }
 </style>

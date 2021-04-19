@@ -5,9 +5,9 @@
                 :todo="currTodo"
         />
         <TodoDetails :todo="currTodo"/>
-<!--        <router-link class="back" to="/">-->
-<!--            <p class="back">{{$t("goBack")}}</p>-->
-<!--        </router-link>-->
+        <!--        <router-link class="back" to="/">-->
+        <!--            <p class="back">{{$t("goBack")}}</p>-->
+        <!--        </router-link>-->
     </div>
 </template>
 
@@ -44,8 +44,8 @@
 </script>
 
 <style scoped>
-    .back{
-      text-decoration: none;
+    .back {
+        text-decoration: none;
     }
 
     .details {
@@ -57,7 +57,7 @@
         text-decoration: line-through;
     }
 
-    .back{
+    .back {
         font-size: 20px;
     }
 </style>

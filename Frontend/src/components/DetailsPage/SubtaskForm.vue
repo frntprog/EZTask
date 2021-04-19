@@ -37,7 +37,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .sub-from{
+    .sub-from {
         display: flex;
         align-items: center;
         justify-content: space-around;
