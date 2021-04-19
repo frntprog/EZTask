@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Todo = require("../models/Todo");
 const Joi = require('@hapi/joi');
+const to = require('await-to-js').default;
 
 router.get("/", async (req, res) => {
     try {
-        const todos = await Todo.find().sort({date: -1});
+        const [err, todos] = await to(Todo.find().sort({date: -1}));
         res.json(todos);
     } catch (e) {
         res.json({message: e});
@@ -22,25 +23,25 @@ router.post("/", async (req, res) => {
         res.json({error})
     } else {
         try {
-            console.log(value)
             const todo = new Todo({
                 ...value
             });
-            const savedTodo = await todo.save();
-            res.json(savedTodo);
+            const [err, savedTodo] = await to(todo.save());
+            if (err) {
+                res.status(404).json(error);
+            } else {
+                res.json(savedTodo);
+            }
         } catch (e) {
             res.json({message: e});
         }
     }
 });
 
-router.delete("/one/:todoID", async (req, res) => {
-    try {
-        const removedTodo = await Todo.deleteOne({_id: req.params.todoID});
-        res.json(removedTodo);
-    } catch (e) {
-        res.json({message: e});
-    }
+router.delete("/one/:todoID", async (req, res, cb) => {
+    const [err, removedTodo] = await to(Todo.deleteOne({_id: req.params.todoID}));
+    if (err) return cb('No user found');
+    res.json(removedTodo);
 });
 
 router.delete("/done", async (req, res) => {
@@ -77,22 +78,19 @@ router.patch("/:todoID", async (req, res) => {
 router.patch("/edit/:todoID", async (req, res) => {
     const {task} = req.body;
     const schema = Joi.object().keys({
-        task: Joi.string().min(2)
+        task: Joi.string().min(3)
     })
     const {error, value} = schema.validate({task});
     if (error) {
-        console.log(error)
-        res.status(403).json(error.details[0].message)
+        res.status(403).json(error.details[0])
     } else {
         try {
-            console.log("TRY")
             const updatedTodo = await Todo.updateOne(
                 {_id: req.params.todoID},
                 {$set: {task: value.task}}
             );
             res.json(updatedTodo);
         } catch (e) {
-            console.log("CATCH")
             res.json({message: e});
         }
     }
@@ -101,14 +99,13 @@ router.patch("/edit/:todoID", async (req, res) => {
 router.patch("/detailedInfo/:todoID", async (req, res) => {
     const data = req.body;
     const schema = Joi.object().keys({
-        subTask: Joi.string().min(2)
+        subTask: Joi.string().min(3)
     })
     const {error, value} = schema.validate(data);
     if (error) {
-        res.status(403).json(error.details[0].message)
+        res.status(403).json(error.details[0])
     } else {
         try {
-            console.log(value)
             const updatedTodo = await Todo.updateOne(
                 {_id: req.params.todoID},
                 {
