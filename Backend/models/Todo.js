@@ -1,5 +1,12 @@
 const mongoose = require('mongoose');
 
+const SubTask = mongoose.Schema({
+    subTask: {
+        require: true,
+        type: String
+    }
+})
+
 const TodoSchema = mongoose.Schema({
     task: {
         type: String,
@@ -17,6 +24,6 @@ const TodoSchema = mongoose.Schema({
         type: Boolean,
         default: false
     },
-    detailedInfo: []
+    subTasks: [SubTask]
 })
 module.exports = mongoose.model('Todos', TodoSchema)
