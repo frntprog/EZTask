@@ -5,16 +5,14 @@
                 :todo="currTodo"
         />
         <TodoDetails :todo="currTodo"/>
-        <!--        <router-link class="back" to="/">-->
-        <!--            <p class="back">{{$t("goBack")}}</p>-->
-        <!--        </router-link>-->
     </div>
 </template>
 
 <script>
+    import {mapGetters} from 'vuex';
     import EditInput from "../EditInput";
     import TodoItem from "../TodoItem";
-    import TodoDetails from "./TodoDetails";
+    import TodoDetails from "./TodoSubtasks";
 
     export default {
         name: "TodoDetailPage",
@@ -29,14 +27,15 @@
             }
         },
         created() {
-            const todo = this.$store.state.todo.todos.find(todo => todo._id === this.$route.params.id)
+            const todo = this.getAllTodos.find(todo => todo._id === this.$route.params.id);
             if (todo) {
                 this.todo = todo;
             }
         },
         computed: {
+            ...mapGetters(['getAllTodos']),
             currTodo() {
-                const todo = this.$store.state.todo.todos.find(todo => todo._id === this.$route.params.id)
+                const todo = this.getAllTodos.find(todo => todo._id === this.$route.params.id);
                 return todo;
             }
         }

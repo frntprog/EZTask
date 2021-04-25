@@ -24,7 +24,7 @@ export default {
         },
 
         async deleteTodo(ctx, todoID) {
-            await fetch(`http://localhost:3000/todo/one/${todoID}`, {
+            await fetch(`http://localhost:3000/todo/${todoID}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ export default {
         },
 
         async clearDone(ctx) {
-            await fetch(`http://localhost:3000/todo/done`, {
+            await fetch(`http://localhost:3000/todo`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -54,7 +54,8 @@ export default {
             ctx.commit('triggerCompleted', payload.item)
         },
 
-        async editTodo(ctx, payload) {
+        async editTask(ctx, payload) {
+            console.log("EDIT", payload)
             try {
                 const res = await fetch(`http://localhost:3000/todo/edit/${payload.id}`, {
                     method: 'PATCH',
@@ -69,7 +70,7 @@ export default {
                 }
                 ctx.commit("editSelectedItem", payload.item)
             } catch (e) {
-                // console.log("CATCH: ", e)
+                throw e;
             }
 
         },
@@ -89,12 +90,12 @@ export default {
                 }
                 ctx.commit("addSubTask", payload)
             } catch (e) {
-                // console.log(e);
+                throw e;
             }
         },
 
         async deleteSubTask(ctx, payload) {
-            await fetch(`http://localhost:3000/todo/delete/subTask/${payload.id}`, {
+            await fetch(`http://localhost:3000/todo/${payload.id}/subTask`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -104,7 +105,7 @@ export default {
             ctx.commit('setDeleteSubTask', payload);
         },
 
-        changeEditStatus(ctx, payload) {
+        accessEdit(ctx, payload) {
             ctx.commit('toggleEdit', payload)
         }
     },
@@ -152,8 +153,8 @@ export default {
                         edit: false,
                     };
                 }
-
             })
+            console.log(state.todos)
         },
 
         deleteCompleted(state) {
@@ -188,6 +189,9 @@ export default {
         todos: []
     },
     getters: {
+        getAllTodos(state){
+          return state.todos;
+        },
         unDoneTodos(state) {
             const res = state.todos.filter(todo => todo.completed === false);
             return res;

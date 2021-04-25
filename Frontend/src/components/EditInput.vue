@@ -1,7 +1,7 @@
 <template>
     <div class="edit-wrapper">
         <pencil-outline @click="[editItem(todo._id), defaultData()]" class="edit"/>
-        <form @submit.prevent="submit(todo)">
+        <form @submit.prevent="submitChanges(todo)">
             <input :class="{editInput: todo.edit === false}" type="text" v-model="edited">
         </form>
     </div>
@@ -26,15 +26,15 @@
           this.edited = this.todo.task;
         },
         methods:{
-            ...mapActions(["changeEditStatus", "editTodo"]),
+            ...mapActions(["accessEdit", "editTask"]),
             editItem(id){
                 const payload = {
                     id,
                     edited: this.todo.task
                 }
-                this.changeEditStatus(payload);
+                this.accessEdit(payload);
             },
-            submit(item){
+            submitChanges(item){
                 const payload = {
                     id: item._id,
                     item: {
@@ -42,7 +42,7 @@
                         task: this.edited
                     }
                 }
-                this.editTodo(payload);
+                this.editTask(payload);
             },
             defaultData(){
                 this.edited = this.todo.task;
@@ -73,6 +73,8 @@
         outline: none;
         font-size: 16px;
         transition: all 0.3s;
+        height: 1.5rem !important;;
+        margin: 0 !important;
     }
 
     .edit-wrapper input:focus {
