@@ -2,7 +2,7 @@
     <div>
         <h4 class="subTitle">{{$t("headers.subTasks")}}</h4>
         <SubtaskForm :todo="todo"/>
-        <SubTask v-for="item in todo.detailedInfo" :subTask="{item: item, todo: todo}"/>
+        <SubTask v-for="item in todo.subTasks" :subTask="{item: item, todo: todo}" :key="item._id"/>
     </div>
 </template>
 

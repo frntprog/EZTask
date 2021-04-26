@@ -8,6 +8,7 @@ export default {
                 },
             });
             const todos = await res.json();
+            console.log(todos);
             ctx.commit('updateTodos', todos)
         },
 
@@ -76,8 +77,9 @@ export default {
         },
 
         async addSubtask(ctx, payload) {
+            console.log(payload);
             try {
-                const res = await fetch(`http://localhost:3000/todo/detailedInfo/${payload.id}`, {
+                const res = await fetch(`http://localhost:3000/subtask/${payload.id}/`, {
                     method: 'PATCH',
                     headers: {
                         'Content-Type': 'application/json'
@@ -113,7 +115,7 @@ export default {
         setDeleteSubTask(state, payload) {
             state.todos = state.todos.map(item => {
                 if (item._id === payload.id) {
-                    item.detailedInfo = item.detailedInfo.filter(sub => {
+                    item.subTasks = item.subTasks.filter(sub => {
                         return sub !== payload.subTask;
                     })
                 }
@@ -124,7 +126,8 @@ export default {
         addSubTask(state, payload) {
             state.todos = state.todos.map(todo => {
                 if (todo._id === payload.id) {
-                    todo.detailedInfo.unshift(payload.res)
+                    todo.subTasks.unshift(payload.res);
+                    console.log(state.todos);
                 }
                 return todo;
             })
@@ -189,8 +192,8 @@ export default {
         todos: []
     },
     getters: {
-        getAllTodos(state){
-          return state.todos;
+        getAllTodos(state) {
+            return state.todos;
         },
         unDoneTodos(state) {
             const res = state.todos.filter(todo => todo.completed === false);
