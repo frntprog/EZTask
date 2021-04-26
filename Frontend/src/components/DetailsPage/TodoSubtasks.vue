@@ -13,10 +13,7 @@
     export default {
         name: "TodoDetails",
         components: {SubTask, SubtaskForm},
-        props: ['todo'],
-        mounted() {
-            console.log(this.todo)
-        }
+        props: ['todo']
     }
 </script>
 

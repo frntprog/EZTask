@@ -55,7 +55,6 @@ export default {
         },
 
         async editTask(ctx, payload) {
-            console.log("EDIT", payload)
             try {
                 const res = await fetch(`http://localhost:3000/todo/edit/${payload.id}`, {
                     method: 'PATCH',
@@ -76,7 +75,6 @@ export default {
         },
 
         async addSubtask(ctx, payload) {
-            console.log(payload);
             try {
                 const res = await fetch(`http://localhost:3000/subtask/${payload.id}/`, {
                     method: 'PATCH',
@@ -86,7 +84,6 @@ export default {
                     body: JSON.stringify(payload.res)
                 });
                 const result = await res.json();
-                console.log(result)
                 if (result.message) {
                     throw `${result.message}`;
                 }
@@ -121,14 +118,12 @@ export default {
                 }
                 return item;
             });
-            console.log(state.todos)
         },
 
         addSubTask(state, payload) {
             state.todos = state.todos.map(todo => {
                 if (todo._id === payload.id) {
                     todo.subTasks.unshift(payload.res);
-                    console.log(state.todos);
                 }
                 return todo;
             })
@@ -158,7 +153,6 @@ export default {
                     };
                 }
             })
-            console.log(state.todos)
         },
 
         deleteCompleted(state) {

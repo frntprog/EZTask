@@ -26,12 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a058bc-9c7b-443a-a2e6-0f21bc21a27c" name="Default Changelist" comment="Second update">
-      <change beforePath="$PROJECT_DIR$/Backend/routes/SubTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/SubTasks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/routes/todos.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/todos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/components/DetailsPage/SubTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/components/DetailsPage/SubTask.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/components/DetailsPage/TodoSubtasks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/components/DetailsPage/TodoSubtasks.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/components/TodoItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/components/TodoItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/store/modules/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/store/modules/todo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +72,9 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\38098\Desktop\Study\TodoApp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\38098\Desktop\Study\TodoApp\Frontend\src\styles" />
       <recent name="C:\Users\38098\Desktop\Study\TodoApp\Frontend\src\router" />
@@ -114,7 +113,7 @@
       <workItem from="1619171139161" duration="9411000" />
       <workItem from="1619379201088" duration="392000" />
       <workItem from="1619379610430" duration="443000" />
-      <workItem from="1619466684525" duration="5722000" />
+      <workItem from="1619466684525" duration="6454000" />
     </task>
     <task id="LOCAL-00001" summary="Second update">
       <created>1618513890092</created>
