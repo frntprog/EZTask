@@ -2,7 +2,7 @@
     <div>
         <h4 class="subTitle">{{$t("headers.subTasks")}}</h4>
         <SubtaskForm :todo="todo"/>
-        <SubTask v-for="item in todo.subTasks" :subTask="{item: item, todo: todo}" :key="item._id"/>
+        <SubTask v-for="item in todo.subTasks" :extraInfo="{todoID: todo._id, sub: item}" :key="item._id"/>
     </div>
 </template>
 
@@ -13,7 +13,10 @@
     export default {
         name: "TodoDetails",
         components: {SubTask, SubtaskForm},
-        props: ['todo']
+        props: ['todo'],
+        mounted() {
+            console.log(this.todo)
+        }
     }
 </script>
 

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e0a058bc-9c7b-443a-a2e6-0f21bc21a27c" name="Default Changelist" comment="Second update">
+      <change beforePath="$PROJECT_DIR$/Backend/routes/SubTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/SubTasks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/routes/todos.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/todos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/components/DetailsPage/SubTask.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/components/DetailsPage/SubTask.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/components/DetailsPage/TodoSubtasks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/components/DetailsPage/TodoSubtasks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/components/TodoItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/components/TodoItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/store/modules/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/store/modules/todo.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qvR9qTsjB9zmMZhKWyAelAt8Sg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\38098\Desktop\Study\TodoApp\Frontend\src\styles" />
+      <recent name="C:\Users\38098\Desktop\Study\TodoApp\Frontend\src\router" />
+      <recent name="C:\Users\38098\Desktop\Study\TodoApp\Frontend\src\components\DetailsPage" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0a058bc-9c7b-443a-a2e6-0f21bc21a27c" name="Default Changelist" comment="" />
+      <created>1617957928579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617957928579</updated>
+      <workItem from="1617957930965" duration="194000" />
+      <workItem from="1617958168177" duration="1208000" />
+      <workItem from="1617959392489" duration="1108000" />
+      <workItem from="1618151304045" duration="1229000" />
+      <workItem from="1618215465885" duration="3383000" />
+      <workItem from="1618261394708" duration="803000" />
+      <workItem from="1618299966944" duration="23130000" />
+      <workItem from="1618393353939" duration="16897000" />
+      <workItem from="1618431315609" duration="1357000" />
+      <workItem from="1618475390873" duration="31396000" />
+      <workItem from="1618559639072" duration="8083000" />
+      <workItem from="1618674421859" duration="3944000" />
+      <workItem from="1618684451561" duration="2568000" />
+      <workItem from="1618740588340" duration="6320000" />
+      <workItem from="1618770650438" duration="5899000" />
+      <workItem from="1618816073370" duration="16247000" />
+      <workItem from="1618845433338" duration="1930000" />
+      <workItem from="1619001047175" duration="8741000" />
+      <workItem from="1619020696639" duration="3000" />
+      <workItem from="1619171139161" duration="9411000" />
+      <workItem from="1619379201088" duration="392000" />
+      <workItem from="1619379610430" duration="443000" />
+      <workItem from="1619466684525" duration="5722000" />
+    </task>
+    <task id="LOCAL-00001" summary="Second update">
+      <created>1618513890092</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618513890092</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Second update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second update" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="845" y="354" width="892" height="332" key="#File_Watchers" timestamp="1618304930822">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="845" y="354" width="892" height="332" key="#File_Watchers/0.0.1920.1040@0.0.1920.1040" timestamp="1618304930822" />
+    <state x="845" y="383" width="792" height="597" key="#Notifications" timestamp="1618825694884">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="845" y="383" width="792" height="597" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1618825694884" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618397815554">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1618397815554" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1618842331223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1618842331223" />
+    <state x="862" y="255" key="EditFileWatcherDialog" timestamp="1618304606462">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="862" y="255" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1618304606462" />
+    <state x="1220" y="275" key="FileChooserDialogImpl" timestamp="1617959388972">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1220" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617959388972" />
+    <state x="694" y="122" key="SettingsEditor" timestamp="1618822800915">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="694" y="122" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1618822800915" />
+    <state x="626" y="235" key="Vcs.Push.Dialog.v2" timestamp="1619379410276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="626" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1619379410276" />
+    <state x="667" y="255" width="585" height="530" key="find.popup" timestamp="1619472435781">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="255" width="585" height="530" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1619472435781" />
+    <state x="694" y="308" key="git4idea.merge.GitPullDialog" timestamp="1619467590996">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="694" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619467590996" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1618838146757">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1618838146757" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1619468263384">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1619468263384" />
+  </component>
+</project>

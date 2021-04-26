@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p @click="deleteSTask">{{subTask.item.subTask}}</p>
+        <p @click="deleteSTask">{{extraInfo.sub.subTask}}</p>
     </div>
 </template>
 
@@ -9,7 +9,7 @@
 
     export default {
         name: "SubTask",
-        props: ['subTask'],
+        props: ['extraInfo'],
         data() {
             return {
                 completed: false
@@ -19,8 +19,8 @@
             ...mapActions(['deleteSubTask']),
             deleteSTask() {
                 const payload = {
-                    id: this.subTask.todo._id,
-                    subTask: this.subTask.item
+                    id: this.extraInfo.todoID,
+                    subTaskID:this.extraInfo.sub._id
                 }
                 this.deleteSubTask(payload);
             }

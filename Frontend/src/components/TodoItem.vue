@@ -27,9 +27,6 @@
         components: {
             EditInput
         },
-        mounted(){
-            console.log(this.todo);
-        },
         methods: {
             ...mapActions(['deleteTodo', 'doneTodo']),
 

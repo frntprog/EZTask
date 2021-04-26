@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const Todo = require("../models/Todo");
-const Joi = require("@hapi/joi");
 const to = require("await-to-js").default;
 const {validatePostTodo} = require("../middlewares/middlewares");
 
@@ -10,7 +9,6 @@ router.patch("/:todoId", validatePostTodo, async (req, res) => {
         error,
         subTask
       } = req.body;
- 
     if (error) {
       res.status(403).json(error.details[0]);
     } else {
@@ -41,7 +39,7 @@ router.patch("/:todoId", validatePostTodo, async (req, res) => {
         }
       })
     );
-  
+
     err ? res.json(err) : res.json(removedSubTask);
   });
 
