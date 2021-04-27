@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Todo = require("../models/Todo");
 const to = require("await-to-js").default;
-const {validatePostTodo} = require("../middlewares/middlewares");
+const {validateStr} = require("../middlewares/middlewares");
 
 router.get("/", async (req, res) => {
   const [err, todos] = await to(Todo.find().sort({
@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   err ? res.json(err) : res.json(todos);
 });
 
-router.post("/", validatePostTodo, async (req, res) => {
+router.post("/", validateStr, async (req, res) => {
   const {
     error,
     task
@@ -60,7 +60,7 @@ router.patch("/:todoID", async (req, res) => {
   }) : res.json(updatedTodo);
 });
 
-router.patch("/edit/:todoID", validatePostTodo, async (req, res) => {
+router.patch("/edit/:todoID", validateStr, async (req, res) => {
   const {
     error,
     task

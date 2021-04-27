@@ -1,5 +1,5 @@
 const Joi = require("@hapi/joi");
-function validatePostTodo(req, res, next) {
+function validateStr(req, res, next) {
     const data = req.body;
     const schema = Joi.object().keys({
       task: Joi.string().min(3),
@@ -14,4 +14,4 @@ function validatePostTodo(req, res, next) {
     next();
 }
 
-module.exports = {validatePostTodo};
+module.exports = {validateStr};

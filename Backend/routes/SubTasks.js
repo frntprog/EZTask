@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Todo = require("../models/Todo");
 const to = require("await-to-js").default;
-const {validatePostTodo} = require("../middlewares/middlewares");
+const {validateStr} = require("../middlewares/middlewares");
 
-router.patch("/:todoId", validatePostTodo, async (req, res) => {
+router.patch("/:todoId", validateStr, async (req, res) => {
     const {
         error,
         subTask

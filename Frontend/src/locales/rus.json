@@ -13,7 +13,10 @@
     "done": "выполнить",
     "undone": "не выполнено",
     "delete": "удалить",
-    "submit": "Подтвердить"
+    "submit": "Подтвердить",
+    "switchSignIn": "Войти",
+    "switchSignOut": "Выйти"
+
   },
   "goBack": "Назад"
 }

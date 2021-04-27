@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="todos">
             <div class="auth">
-                <button @click="changeUserState" class="auth-btn">{{ auth ? 'Выйти' : 'Войти' }}</button>
+                <button @click="changeUserState" class="auth-btn">{{ auth ? $t("buttons.switchSignOut") : $t("buttons.switchSignIn")}}</button>
             </div>
             <h1>{{$t("headers.todo")}}</h1>
             <TodoList :todos="unDoneTodos"/>
@@ -28,7 +28,7 @@
             TodoList,
             TodoDone
         },
-        async mounted() {
+        mounted() {
             this.fetchTodos();
             this.auth = localStorage.getItem('auth') !== null;
         },
@@ -39,11 +39,11 @@
             ...mapActions(["fetchTodos"]),
             changeUserState() {
                 if (this.auth) {
-                    localStorage.removeItem('auth')
+                    localStorage.removeItem('auth');
                     this.auth = false;
                 } else {
-                    localStorage.setItem('auth', true)
-                    this.auth = true
+                    localStorage.setItem('auth', true);
+                    this.auth = true;
                 }
             }
         }

@@ -11,7 +11,6 @@
 
 <script>
     import {mapMutations} from 'vuex';
-    import M from 'materialize-css';
 
     export default {
         name: "Switcher",
@@ -19,9 +18,6 @@
             return {
                 isEngLocale: false
             }
-        },
-        mounted() {
-            M.AutoInit();
         },
         methods: {
             ...mapMutations(['switchRussian', 'switchEnglish']),
