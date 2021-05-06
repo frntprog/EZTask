@@ -52,7 +52,7 @@ class authController {
                 roles: [userRole.value]
             });
             await user.save();
-            return res.json({
+            return res.status(201).json({
                 message: "The user was registrated"
             });
         } catch (e) {

@@ -18,8 +18,19 @@ app.use('/todo', todoRoute);
 app.use('/subtask', subTaskRoute);
 app.use('/auth', authRouter);
 
-mongoose.connect(process.env.DB_CONNECTION, {
-    useNewUrlParser: true
-});
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000);
+const start = async () => {
+    try {
+        mongoose.connect(process.env.DB_CONNECTION, {
+            useNewUrlParser: true
+        });
+        app.listen(PORT);
+    } catch (e) {
+        resizeBy.json({
+            message: e
+        })
+    }
+}
+
+start();
