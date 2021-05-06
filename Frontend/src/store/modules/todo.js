@@ -105,7 +105,7 @@ export default {
         },
 
         accessEdit(ctx, payload) {
-            ctx.commit('toggleEdit', payload)
+            ctx.commit('toggleEdit', payload);
         }
     },
     mutations: {
