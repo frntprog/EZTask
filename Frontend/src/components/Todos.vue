@@ -41,10 +41,11 @@
                 if (this.auth) {
                     localStorage.removeItem('auth');
                     this.auth = false;
-                } else {
-                    localStorage.setItem('auth', true);
-                    this.auth = true;
-                }
+                } 
+                // else {
+                //     localStorage.setItem('auth', true);
+                //     this.auth = true;
+                // }
             }
         }
     }

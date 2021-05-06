@@ -12,7 +12,17 @@ export default new Router({
     routes: [{
             path: '/',
             name: 'main',
-            component: Todos
+            component: Todos,
+            beforeEnter: (to, form, next) => {
+                console.log(localStorage.getItem('auth'))
+                if (localStorage.getItem('auth')) {
+                    next();
+                } else {
+                    next({
+                        name: 'main'
+                    })
+                }
+            }
         },
         {
             path: '/detail/:id',
@@ -22,7 +32,7 @@ export default new Router({
                     next();
                 } else {
                     next({
-                        name: 'main'
+                        name: 'registration'
                     })
                 }
             }
