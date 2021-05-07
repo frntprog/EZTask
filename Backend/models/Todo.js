@@ -26,4 +26,5 @@ const TodoSchema = mongoose.Schema({
     },
     subTasks: [SubTask]
 })
+
 module.exports = mongoose.model('Todos', TodoSchema)

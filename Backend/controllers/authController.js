@@ -22,6 +22,7 @@ const generateAccessToken = (id, role) => {
 
 class authController {
     async registration(req, res) {
+        console.log(req.body)
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
@@ -49,7 +50,8 @@ class authController {
             const user = new User({
                 username,
                 password: hashPassword,
-                roles: [userRole.value]
+                roles: [userRole.value],
+                todos: []
             });
             await user.save();
             return res.status(201).json({

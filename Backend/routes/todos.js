@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const Todo = require("../models/Todo");
+const User = require("../models/User");
 const to = require("await-to-js").default;
-const {validateStr} = require("../middlewares/middlewares");
+const {
+  validateStr
+} = require("../middlewares/middlewares");
 
 router.get("/", async (req, res) => {
   const [err, todos] = await to(Todo.find().sort({
@@ -11,19 +14,31 @@ router.get("/", async (req, res) => {
   err ? res.json(err) : res.json(todos);
 });
 
-router.post("/", validateStr, async (req, res) => {
+router.post("/", async (req, res) => {
+  console.log(req.body);
   const {
     error,
-    task
+    task,
+    username
   } = req.body;
   if (error) {
-    res.status(400).json({message: "Error"});
+    res.status(400).json({
+      message: "Error"
+    });
     return;
   }
+
+  console.log("USERNAME: ", username);
+  const candidate = await User.findOne({
+    username
+  });
+  console.log("CANDIDATE: ", candidate)
   const todo = new Todo({
     task
   });
+  console.log(todo);
   const [err, savedTodo] = await to(todo.save());
+  console.log(err, savedTodo)
   err ? res.status(500).json(error) : res.status(201).json(savedTodo);
 });
 
