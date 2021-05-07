@@ -22,7 +22,8 @@
             submit() {
                 if (this.todo !== '') {
                     const todo = {
-                        task: this.todo
+                        task: this.todo,
+                        username: localStorage.getItem('username')
                     };
                     this.addTodo(todo);
                     this.todo = '';

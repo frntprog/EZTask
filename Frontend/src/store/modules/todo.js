@@ -12,6 +12,7 @@ export default {
         },
 
         async addTodo(ctx, todo) {
+            console.log(todo);
             const res = await fetch('http://localhost:3000/todo', {
                 method: 'POST',
                 headers: {

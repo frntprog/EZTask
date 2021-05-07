@@ -5,9 +5,10 @@
         <input class="username" placeholder="Enter yout username" type="text" v-model="username">
         <input class="password" placeholder="Enter yout password" type="text" v-model="password">
         <div class="button-wrapper">
-            <router-link :to="{path: `/`}">
+            <!-- <router-link :to="{path: `/`}">
                 <button type="submit">{{$t("buttons.submit")}}</button>
-            </router-link>
+            </router-link> -->
+            <button type="submit">{{$t("buttons.submit")}}</button>
         </div>
     </form>
     </div>

@@ -1,6 +1,7 @@
 export default {
     actions: {
         async registrateUser(ctx, payload) {
+            console.log(payload)
             try {
                 const res = await fetch('http://localhost:3000/auth/registration', {
                     method: 'POST',
@@ -9,7 +10,8 @@ export default {
                     },
                     body: JSON.stringify(payload)
                 });
-                // const response = await res.json();
+                const response = await res.json();
+                console.log(response);
                 ctx.commit('LogIn', payload);
             } catch (e) {
                 throw new Error(e)
@@ -17,8 +19,9 @@ export default {
         },
     },
     mutations: {
-        LogIn() {
+        LogIn(state, payload) {
             localStorage.setItem('auth', true);
+            localStorage.setItem('username', payload.username);
         }
     },
     getters: {},
