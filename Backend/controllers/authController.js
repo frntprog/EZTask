@@ -25,6 +25,7 @@ class authController {
         console.log(req.body)
         try {
             const errors = validationResult(req);
+            console.log(errors)
             if (!errors.isEmpty()) {
                 return res.status(400).json({
                     message: "Error while registration",

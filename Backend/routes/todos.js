@@ -7,11 +7,12 @@ const {
   validateStr
 } = require("../middlewares/middlewares");
 
-router.get("/", async (req, res) => {
-  const [err, todos] = await to(Todo.find().sort({
-    date: -1
-  }));
-  err ? res.json(err) : res.json(todos);
+router.get("/:userID", async (req, res) => {
+  const [err, user] = await to(User.findOne({
+    "_id": "609a4aa37817183768df00ba"
+  }))
+  console.log(user);
+  err ? res.json(err) : res.json(user);
 });
 
 router.post("/", async (req, res) => {
@@ -28,7 +29,6 @@ router.post("/", async (req, res) => {
     return;
   }
 
-  console.log("USERNAME: ", username);
   const candidate = await User.findOne({
     username
   });
@@ -36,9 +36,8 @@ router.post("/", async (req, res) => {
   const todo = new Todo({
     task
   });
-  console.log(todo);
+
   const [err, savedTodo] = await to(todo.save());
-  console.log(err, savedTodo)
   err ? res.status(500).json(error) : res.status(201).json(savedTodo);
 });
 
@@ -58,6 +57,40 @@ router.delete("/", async (req, res) => {
   }));
 
   value ? res.json(value) : res.json(err);
+});
+
+router.patch("/:userID", async (req, res) => {
+  console.log(req.body, req.params.userID);
+  const {
+    task
+  } = req.body;
+  console.log(task)
+  const todos = new Todo({
+    task
+  });
+
+  const [err, updateUser] = await to(
+    User.updateOne({
+      _id: req.params.userID
+    }, {
+      $push: {
+        todos
+      },
+    })
+  );
+
+  console.log(updateUser)
+  err ? res.json(err) : res.json(updateUser);
+});
+
+router.delete("/:todoID", async (req, res) => {
+  const [err, removedTodo] = await to(
+    Todo.deleteOne({
+      _id: req.params.todoID
+    })
+  );
+
+  err ? res.json(err) : res.json(removedTodo);
 });
 
 router.patch("/:todoID", async (req, res) => {
