@@ -26,10 +26,10 @@ export default {
             }
         },
         async loginUser(ctx, payload) {
-            console.log("ACTIOn");
+            console.log("LOGIN");
             console.log(payload)
             try {
-                const res = await fetch('http://localhost:3000/auth/registration', {
+                const res = await fetch('http://localhost:3000/auth/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -37,10 +37,12 @@ export default {
                     body: JSON.stringify(payload)
                 });
                 const response = await res.json();
+                console.log();
                 if (res.status >= 400) {
                     throw new Error(response.message);
                 }
-                ctx.commit('registration', payload);
+                localStorage.setItem('auth', true);
+                ctx.commit('login', payload);
             } catch (e) {
                 localStorage.setItem('auth', false);
                 throw new Error(e);
@@ -56,6 +58,13 @@ export default {
             });
             // localStorage.setItem('auth', true);
             // localStorage.setItem('username', payload.username);
+        },
+
+        login(state, payload) {
+            console.log("LOGIN MUTATION");
+            router.push({
+                name: "main"
+            })
         }
     },
     getters: {},

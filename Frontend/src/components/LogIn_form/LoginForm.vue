@@ -1,7 +1,7 @@
 <template>
     <div class="form_wrapper">
         <h2>Log in</h2>
-        <form :name="showUsername" @submit.prevent="regisration">
+        <form :name="showUsername" @submit.prevent="login">
         <input class="username" placeholder="Enter yout username" type="text" v-model="username">
         <input class="password" placeholder="Enter yout password" type="text" v-model="password">
         <div class="button-wrapper">
@@ -31,14 +31,14 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["registrateUser"]),
-        regisration(){
+        ...mapActions(["loginUser"]),
+        login(){
             console.log("try");
            const payload = {
                username: this.username,
                password: this.password
            };
-           this.registrateUser(payload)
+           this.loginUser(payload)
         }
     }
 }
