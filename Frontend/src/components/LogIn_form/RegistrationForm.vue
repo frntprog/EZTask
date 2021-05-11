@@ -1,14 +1,12 @@
 <template>
     <div class="form_wrapper">
-        <h2>Sign In</h2>
-        <form @submit.prevent="regisration">
+        <h2>Registration</h2>
+        <form :name="showUsername" @submit.prevent="regisration">
         <input class="username" placeholder="Enter yout username" type="text" v-model="username">
         <input class="password" placeholder="Enter yout password" type="text" v-model="password">
         <div class="button-wrapper">
-            <!-- <router-link :to="{path: `/`}">
                 <button type="submit">{{$t("buttons.submit")}}</button>
-            </router-link> -->
-            <button type="submit">{{$t("buttons.submit")}}</button>
+            <!-- <button type="submit">{{$t("buttons.submit")}}</button> -->
         </div>
     </form>
     </div>
@@ -18,7 +16,7 @@
 import {mapActions} from 'vuex';
 
 export default {
-    name: "From",
+    name: "RegistrationForm",
     data() {
         return {
             username: '',
@@ -33,11 +31,13 @@ export default {
     methods: {
         ...mapActions(["registrateUser"]),
         regisration(){
+            console.log("try");
            const payload = {
                username: this.username,
                password: this.password
            };
-           this.registrateUser(payload)
+           this.registrateUser(payload);
+           console.log(localStorage.getItem('auth'));
         }
     }
 }

@@ -1,18 +1,19 @@
 export default {
     actions: {
         async fetchTodos(ctx) {
-            const res = await fetch('http://localhost:3000/todo', {
+            const res = await fetch(`http://localhost:3000/todo/${"609a4aa37817183768df00ba"}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 },
             });
-            const todos = await res.json();
-            ctx.commit('updateTodos', todos)
+            console.log(res)
+            const user = await res.json();
+            console.log(user);
+            ctx.commit('updateTodos', user.todos)
         },
 
         async addTodo(ctx, todo) {
-            console.log(todo);
             const res = await fetch('http://localhost:3000/todo', {
                 method: 'POST',
                 headers: {

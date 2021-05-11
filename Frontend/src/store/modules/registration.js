@@ -1,6 +1,10 @@
+const to = require("await-to-js").default;
+import router from '../../router/router';
+
 export default {
     actions: {
         async registrateUser(ctx, payload) {
+            console.log("ACTIOn");
             console.log(payload)
             try {
                 const res = await fetch('http://localhost:3000/auth/registration', {
@@ -11,17 +15,47 @@ export default {
                     body: JSON.stringify(payload)
                 });
                 const response = await res.json();
-                console.log(response);
-                ctx.commit('LogIn', payload);
+                if (res.status >= 400) {
+                    throw new Error(response.message);
+                }
+                ctx.commit('registration', payload);
             } catch (e) {
-                throw new Error(e)
+                localStorage.setItem('auth', false);
+                throw new Error(e);
+
+            }
+        },
+        async loginUser(ctx, payload) {
+            console.log("ACTIOn");
+            console.log(payload)
+            try {
+                const res = await fetch('http://localhost:3000/auth/registration', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                const response = await res.json();
+                if (res.status >= 400) {
+                    throw new Error(response.message);
+                }
+                ctx.commit('registration', payload);
+            } catch (e) {
+                localStorage.setItem('auth', false);
+                throw new Error(e);
+
             }
         },
     },
     mutations: {
-        LogIn(state, payload) {
-            localStorage.setItem('auth', true);
-            localStorage.setItem('username', payload.username);
+        registration(state, payload) {
+            console.log("MUtation");
+            router.push({
+                name: "login"
+            });
+            // localStorage.setItem('auth', true);
+            // localStorage.setItem('username', payload.username);
         }
     },
     getters: {},
