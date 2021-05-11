@@ -7,9 +7,9 @@ const {
   validateStr
 } = require("../middlewares/middlewares");
 
-router.get("/:userID", async (req, res) => {
+router.get("/:username", async (req, res) => {
   const [err, user] = await to(User.findOne({
-    "_id": "609a4aa37817183768df00ba"
+    username: req.params.username
   }))
   console.log(user);
   err ? res.json(err) : res.json(user);
@@ -59,8 +59,8 @@ router.delete("/", async (req, res) => {
   value ? res.json(value) : res.json(err);
 });
 
-router.patch("/:userID", async (req, res) => {
-  console.log(req.body, req.params.userID);
+router.patch("/:username", async (req, res) => {
+  console.log(req.body, req.params.username);
   const {
     task
   } = req.body;
@@ -69,9 +69,9 @@ router.patch("/:userID", async (req, res) => {
     task
   });
 
-  const [err, updateUser] = await to(
+  const [error, updateUser] = await to(
     User.updateOne({
-      _id: req.params.userID
+      username: req.params.username
     }, {
       $push: {
         todos
@@ -79,8 +79,16 @@ router.patch("/:userID", async (req, res) => {
     })
   );
 
-  console.log(updateUser)
-  err ? res.json(err) : res.json(updateUser);
+  if (error) {
+    res.json(error);
+  }
+
+  const [err, updated] = await to(User.findOne({
+    username: req.params.username
+  }))
+
+  console.log("UPDATED: ", updated)
+  err ? res.json(err) : res.json(updated);
 });
 
 router.delete("/:todoID", async (req, res) => {

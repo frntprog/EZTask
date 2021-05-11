@@ -66,6 +66,7 @@ class authController {
     }
 
     async login(req, res) {
+        console.log(req.body)
         try {
             const {
                 username,
