@@ -25,7 +25,7 @@ export default new Router({
                     next();
                 } else {
                     next({
-                        name: 'registration'
+                        name: 'main'
                     })
                 }
             }

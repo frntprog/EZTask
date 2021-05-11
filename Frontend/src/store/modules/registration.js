@@ -42,6 +42,7 @@ export default {
                     throw new Error(response.message);
                 }
                 localStorage.setItem('auth', true);
+                localStorage.setItem("username", payload.username)
                 ctx.commit('login', payload);
             } catch (e) {
                 localStorage.setItem('auth', false);

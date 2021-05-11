@@ -1,7 +1,8 @@
 export default {
     actions: {
         async fetchTodos(ctx) {
-            const res = await fetch(`http://localhost:3000/todo/${"609a4aa37817183768df00ba"}`, {
+            let username = localStorage.getItem("username");
+            const res = await fetch(`http://localhost:3000/todo/${username}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -14,15 +15,17 @@ export default {
         },
 
         async addTodo(ctx, todo) {
-            const res = await fetch('http://localhost:3000/todo', {
-                method: 'POST',
+            let username = localStorage.getItem("username");
+            const res = await fetch(`http://localhost:3000/todo/${username}`, {
+                method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(todo)
             });
             const newTodo = await res.json();
-            ctx.commit('addNewTodo', newTodo)
+            console.log(newTodo.todos)
+            ctx.commit('addNewTodo', newTodo.todos)
         },
 
         async deleteTodo(ctx, todoID) {
@@ -181,8 +184,9 @@ export default {
             state.todos = todos;
         },
 
-        addNewTodo(state, todo) {
-            state.todos.unshift(todo);
+        addNewTodo(state, todos) {
+            console.log("MUTATION: ", todos);
+            state.todos = todos.reverse();
         }
     },
     state: {

@@ -12,7 +12,7 @@
         </li>
         <div class="item-btns">
             <button @click="completeTask(todo)">{{todo.completed ? $t("buttons.undone") : $t("buttons.done")}}</button>
-            <button @click="remove(todo._id)" :class="{hide: $route.path !== '/'}">{{$t("buttons.delete")}}</button>
+            <button @click="remove(todo._id)" :class="{hide: $route.path !== '/main'}">{{$t("buttons.delete")}}</button>
         </div>
     </div>
 </template>
