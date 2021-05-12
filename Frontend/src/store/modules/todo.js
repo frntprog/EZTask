@@ -29,8 +29,9 @@ export default {
         },
 
         async deleteTodo(ctx, todoID) {
-            await fetch(`http://localhost:3000/todo/${todoID}`, {
-                method: 'DELETE',
+            let username = localStorage.getItem("username");
+            await fetch(`http://localhost:3000/todo/${username}/${todoID}`, {
+                method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
                 }
