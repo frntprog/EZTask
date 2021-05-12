@@ -41,7 +41,13 @@ router.post("/", async (req, res) => {
   err ? res.status(500).json(error) : res.status(201).json(savedTodo);
 });
 
-router.delete("/:todoID", async (req, res) => {
+router.patch("/:username/:todoID", async (req, res) => {
+  const candidate = await User.findOne({
+    username: `${req.params.username}`
+  }, {
+    $pull: {}
+  });
+
   const [err, removedTodo] = await to(
     Todo.deleteOne({
       _id: req.params.todoID
